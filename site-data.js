@@ -448,7 +448,7 @@ const SITE_DATA = {
         department: "Struct",
         bio: "Focusing on robot structural mechanics and CAD.",
         linkedIn: "https://www.linkedin.com/in/raghvendra-singh-832907437/",
-        photo: "",
+        photo: "assests/team/Raghvendra_Singh.jpg",
       },
       {
         name: "Dilkush Rajpurohit",
@@ -520,7 +520,7 @@ const SITE_DATA = {
         department: "Civil",
         bio: "Structural layouts and documentation.",
         linkedIn: "",
-        photo: "",
+        photo: "assests/team/Kritika_Meena.jpg",
       },
       {
         name: "Niharika Sankhla",
