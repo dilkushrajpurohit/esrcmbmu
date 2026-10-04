@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ESRC Club — Student-led robotics community at MBM University. Hands-on learning in circuits, embedded systems, autonomous rovers, and competitive robotics.">
+  <title>ESRC Club | Student Robotics Community — MBM University</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ESRC Club | Student Robotics Community — MBM University">
+  <meta property="og:description" content="A student-led robotics community at MBM University. We bring curious minds together to turn ideas into working machines through hands-on learning, teamwork, and experimentation.">
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="hero-banner.jpg" fetchpriority="high">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="sr-only" style="position:fixed;top:0;left:0;z-index:9999;background:var(--clr-accent);color:#fff;padding:8px 16px;">Skip to main content</a>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ════ SOCIAL SIDEBAR (Desktop) ════ -->
+  <div class="social-sidebar-desktop" id="socialSidebar"></div>
+
+  <!-- ════ MOBILE SOCIAL BAR ════ -->
+  <div class="mobile-social-bar" id="mobileSocialBar" aria-label="Social links"></div>
+
+  <!-- ════ NAVIGATION ════ -->
+  <nav class="site-nav site-nav--transparent" id="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo" aria-label="ESRC Club — Back to top">
+        <img src="logo-transparent.png" alt="ESRC Club Logo" class="nav-logo-icon">
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-menu" role="list"></ul>
+    </div>
+  </nav>
+
+  <!-- ════ HERO ════ -->
+  <header class="hero" id="home">
+    <img class="hero__image" src="hero-banner.jpg" alt="Embedded systems, microcontrollers, robotics chassis, and circuit board innovation at ESRC Club MBM" fetchpriority="high" decoding="async">
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content">
+      <div class="hero-pill" id="hero-pill"></div>
+      <h1 class="hero__title">Where Circuits Meet Code &<br><span class="accent-highlight">Robots Come to Life</span></h1>
+      <p class="hero__subtitle" id="hero-subtitle"></p>
+      <div class="hero-rhythm" id="hero-rhythm"></div>
+      <div class="hero-buttons">
+        <a href="#purpose" class="primary-btn">Explore What We Do <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#achievements" class="secondary-btn"><i class="fa-solid fa-trophy"></i> View Achievements</a>
+        <a href="#contact" class="secondary-btn join-hero-btn">Get Involved</a>
+      </div>
+      <div class="hero-stats" id="hero-stats"></div>
+    </div>
+  </header>
+
+  <!-- ════ CORAL DIVIDER + QUOTE ════ -->
+  <hr class="coral-divider" aria-hidden="true">
+  <div class="quote-band">
+    <p class="quote-band__text" id="quote-text"></p>
+    <p class="quote-band__attribution" id="quote-attr"></p>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ════ 01 / ABOUT ════ -->
+    <section class="section" id="about">
+      <div class="section__inner section__inner--wide reveal">
+        <div class="section-header-row" id="about-header"></div>
+        <div class="about-grid">
+          <div class="about-card-big" id="about-card-big"></div>
+          <div class="about-features" id="about-features"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ 02 / PURPOSE & WHAT WE DO ════ -->
+    <section class="section section--alt" id="purpose">
+      <div class="section__inner section__inner--wide reveal">
+        <div class="section-header-row" id="purpose-header"></div>
+        
+        <!-- Purpose Statement Lead Banner -->
+        <div class="purpose-statement-banner" id="purpose-banner"></div>
+
+        <!-- What We Do Grid (5 core points) -->
+        <div class="what-we-do-grid" id="what-we-do-grid"></div>
+
+        <!-- Membership Callout Box -->
+        <div class="membership-callout-box" id="membership-box"></div>
+      </div>
+    </section>
+
+    <!-- ════ 03 / EXAMPLE PROJECT AREAS ════ -->
+    <section class="section" id="projects">
+      <div class="section__inner section__inner--wide reveal">
+        <div class="section-header-row" id="projects-header"></div>
+        
+        <!-- Disclaimer notice: Example areas until actual projects supplied -->
+        <div class="example-projects-notice" id="projects-notice"></div>
+
+        <!-- Project Cards Grid -->
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- ════ 04 / ACHIEVEMENTS ════ -->
+    <section class="section section--alt" id="achievements">
+      <div class="section__inner section__inner--wide reveal">
+        <div class="section-header-row" id="achievements-header"></div>
+        
+        <!-- Achievements Editorial Note -->
+        <div class="achievements-editorial-note" id="achievements-note"></div>
+
+        <!-- Official Transcribed Awards Grid -->
+        <div class="achievements-records-grid" id="achievements-records-grid"></div>
+
+        <!-- Visual Milestone Gallery (from supplied graphics) -->
+        <div class="achievements-visual-gallery" id="achievements-visual-gallery"></div>
+      </div>
+    </section>
+
+    <!-- ════ 05 / UPCOMING EVENTS ════ -->
+    <section class="section" id="events">
+      <div class="section__inner section__inner--wide reveal">
+        <div class="section-header-row" id="events-header"></div>
+        
+        <!-- Honest Empty State for Events -->
+        <div class="events-empty-state-box" id="events-empty-state"></div>
+      </div>
+    </section>
+
+    <!-- ════ 06 / FACULTY ADVISOR ════ -->
+    <section class="section section--alt" id="mentor">
+      <div class="section__inner section__inner--wide reveal">
+        <div class="section-tag" id="mentor-tag"></div>
+        <div class="mentor-box" id="mentor-box"></div>
+      </div>
+    </section>
+
+    <!-- ════ 07 / LEADERSHIP & CORE TEAM ════ -->
+    <section class="section" id="team">
+      <div class="section__inner section__inner--wide reveal">
+        <div class="section-header-row" id="team-header"></div>
+        
+        <!-- Notice on editable roles -->
+        <div class="team-editable-notice" id="team-notice"></div>
+
+        <!-- Leadership row -->
+        <div class="team-leadership-label"><i class="fa-solid fa-crown" style="color:var(--clr-accent)"></i> Leadership</div>
+        <div class="team-grid team-grid--leadership" id="leadership-grid"></div>
+        
+        <!-- Core members -->
+        <div class="team-members-label"><i class="fa-solid fa-users" style="color:var(--clr-accent)"></i> Core Members</div>
+        <div class="team-grid" id="team-grid"></div>
+
+        <!-- Editable Placeholders for Club Expansion -->
+        <div class="team-placeholders-wrap" id="team-placeholders-wrap"></div>
+      </div>
+    </section>
+
+    <!-- ════ 08 / KNOWLEDGE HUB / RESOURCES ════ -->
+    <section class="section section--alt" id="resources">
+      <div class="section__inner section__inner--wide reveal">
+        <div class="section-header-row" id="resources-header"></div>
+        <div class="resources-grid" id="resources-grid"></div>
+      </div>
+    </section>
+
+    <!-- ════ 09 / JOIN & CONTACT ════ -->
+    <section class="section contact-section-dark" id="contact">
+      <div class="section__inner section__inner--wide reveal">
+        <div class="section-header-row" id="contact-header"></div>
+        <div class="contact-wrapper">
+          <div class="contact-info-card" id="contact-info"></div>
+          
+          <div class="contact-form-box">
+            <div class="form-tabs">
+              <button class="form-tab-btn active" id="contactTabBtn" type="button"><i class="fa-regular fa-envelope"></i> Quick Message</button>
+              <button class="form-tab-btn" id="registerTabBtn" type="button"><i class="fa-solid fa-user-plus"></i> Join ESRC / Register</button>
+            </div>
+
+            <!-- Endpoint Configuration Disclaimer -->
+            <div class="form-endpoint-note" id="formEndpointNote"></div>
+
+            <!-- Tab 1: Contact Form -->
+            <form class="custom-form" id="contactForm" novalidate>
+              <div class="form-chips-label">Select Inquiry Topic:</div>
+              <div class="inquiry-chips-wrap" id="inquiryChips"></div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contactName">Your Name <span style="color:var(--clr-accent)">*</span></label>
+                  <input type="text" id="contactName" class="form-control" placeholder="e.g. Rahul Sharma" required>
+                </div>
+                <div class="form-group">
+                  <label for="contactEmail">Email Address <span style="color:var(--clr-accent)">*</span></label>
+                  <input type="email" id="contactEmail" class="form-control" placeholder="name@university.edu" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contactDomain">Area of Interest</label>
+                <select id="contactDomain" class="form-control"></select>
+              </div>
+              <div class="form-group">
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <label for="contactMessage">Message <span style="color:var(--clr-accent)">*</span></label>
+                  <span class="char-counter" id="contactCharCounter">0 / 500</span>
+                </div>
+                <textarea id="contactMessage" class="form-control" rows="4" maxlength="500" placeholder="How can we collaborate or assist you?" required></textarea>
+              </div>
+              <button type="submit" class="btn-full-width">Send Message <i class="fa-regular fa-paper-plane"></i></button>
+              <div class="form-success-msg" id="formSuccessMsg"></div>
+            </form>
+
+            <!-- Tab 2: Membership Registration Form -->
+            <div class="registration-container" id="registerContainer">
+              <form class="custom-form" id="registerForm" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="regName">Full Name <span style="color:var(--clr-accent)">*</span></label>
+                    <input type="text" id="regName" class="form-control" placeholder="Your full name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="regEmail">University Email <span style="color:var(--clr-accent)">*</span></label>
+                    <input type="email" id="regEmail" class="form-control" placeholder="name@university.edu" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="regDepartment">Branch / Department <span style="color:var(--clr-accent)">*</span></label>
+                    <input type="text" id="regDepartment" class="form-control" placeholder="e.g. CSE, ECE, EE, Mechanical" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="regYear">Academic Year <span style="color:var(--clr-accent)">*</span></label>
+                    <select id="regYear" class="form-control" required>
+                      <option value="" disabled selected>Select current year</option>
+                      <option value="1st Year Undergrad">1st Year Undergrad</option>
+                      <option value="2nd Year Undergrad">2nd Year Undergrad</option>
+                      <option value="3rd Year Undergrad">3rd Year Undergrad</option>
+                      <option value="Final Year Undergrad">Final Year Undergrad</option>
+                      <option value="Postgraduate / Masters">Postgraduate / Masters</option>
+                      <option value="Ph.D. Scholar">Ph.D. Scholar</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="regTrackSelect">Preferred Domain / Interest <span style="color:var(--clr-accent)">*</span></label>
+                  <select id="regTrackSelect" class="form-control" required></select>
+                </div>
+                <div class="form-group">
+                  <div style="display:flex;justify-content:space-between;align-items:center;">
+                    <label for="regQuestion">Why do you want to join ESRC Club? <span style="color:var(--clr-accent)">*</span></label>
+                    <span class="char-counter" id="regCharCounter">0 / 600</span>
+                  </div>
+                  <textarea id="regQuestion" class="form-control" rows="3" maxlength="600" placeholder="Briefly describe your interest in robotics, embedded systems, circuits, or coding..." required></textarea>
+                </div>
+                <button type="submit" class="btn-full-width">Submit Registration <i class="fa-solid fa-arrow-right"></i></button>
+                <div class="form-success-msg" id="registerSuccessMsg"></div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ 10 / FAQ ════ -->
+    <section class="section" id="faq">
+      <div class="section__inner reveal">
+        <div class="section-header-row" style="flex-direction:column;align-items:center;text-align:center;" id="faq-header"></div>
+        <div class="faq-list" id="faq-list"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════ FOOTER ════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <a href="#home" class="footer-logo" aria-label="ESRC Club — Back to top">
+          <img src="logo-transparent.png" alt="ESRC Club Logo" class="footer-logo-icon">
+        </a>
+        <span class="footer-tagline" id="footer-tagline"></span>
+        <div class="footer-social-links" id="footer-social"></div>
+      </div>
+      <div class="footer-bottom">
+        <span id="footer-copyright"></span>
+        <span id="footer-credits"></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════ MODALS ════ -->
+
+  <!-- Image Lightbox Modal for Achievements and Photos -->
+  <dialog class="custom-modal" id="imageModal" aria-labelledby="imageModalTitle">
+    <div class="modal-dialog-content modal-dialog-content--image">
+      <button class="modal-close-btn" id="imageModalClose" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-body" id="imageModalBody"></div>
+    </div>
+  </dialog>
+
+  <!-- ════ AI ASSISTANT & NAVIGATOR WIDGET ════ -->
+  <div class="ai-assistant-wrapper" id="aiAssistantWrapper">
+    <button class="ai-launcher-btn" id="aiLauncherBtn" aria-label="Open ESRC AI Assistant" aria-expanded="false" aria-controls="aiAssistantPanel">
+      <span class="ai-launcher-sparkle"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+      <span class="ai-launcher-label">Ask ESRC AI</span>
+      <span class="ai-status-pulse" aria-hidden="true"></span>
+    </button>
+
+    <div class="ai-panel" id="aiAssistantPanel" role="dialog" aria-labelledby="aiPanelTitle" aria-hidden="true">
+      <div class="ai-panel-header">
+        <div class="ai-panel-brand">
+          <div class="ai-avatar-icon">
+            <img src="logo-transparent.png" alt="ESRC Club" class="ai-avatar-logo">
+          </div>
+          <div>
+            <h3 class="ai-panel-title" id="aiPanelTitle">ESRC Navigator AI</h3>
+            <span class="ai-online-status"><span class="ai-status-dot"></span> Interactive Assistant</span>
+          </div>
+        </div>
+        <div class="ai-panel-controls">
+          <button class="ai-header-btn" id="aiClearBtn" title="Clear chat history" aria-label="Clear chat history"><i class="fa-solid fa-rotate-right"></i></button>
+          <button class="ai-header-btn" id="aiCloseBtn" title="Close AI Assistant" aria-label="Close AI Assistant"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+
+      <div class="ai-quick-chips" id="aiQuickChips" role="toolbar" aria-label="Quick questions">
+        <button class="ai-chip" data-query="about">ℹ️ About ESRC</button>
+        <button class="ai-chip" data-query="purpose">🎯 Purpose & What We Do</button>
+        <button class="ai-chip" data-query="achievements">🏆 Achievements</button>
+        <button class="ai-chip" data-query="projects">🤖 Example Projects</button>
+        <button class="ai-chip" data-query="join">✍️ How to Join</button>
+        <button class="ai-chip" data-query="mentor">👤 Faculty Advisor</button>
+      </div>
+
+      <div class="ai-messages-container" id="aiMessagesContainer" aria-live="polite"></div>
+
+      <form class="ai-input-form" id="aiInputForm">
+        <input type="text" class="ai-input-text" id="aiInputText" placeholder="Ask about ESRC, achievements, joining, or workshops..." autocomplete="off">
+        <button type="submit" class="ai-send-btn" id="aiSendBtn" aria-label="Send message"><i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+
+  <script src="site-data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
