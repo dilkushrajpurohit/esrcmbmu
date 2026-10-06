@@ -730,11 +730,22 @@
         <div class="image-lightbox-caption">${esc(caption)}</div>
       </div>
     `;
-    imageModal.showModal();
+    if (typeof imageModal.showModal === "function") {
+      imageModal.showModal();
+    } else {
+      imageModal.setAttribute("open", "");
+    }
   }
 
   if (imageModalClose) {
-    imageModalClose.addEventListener("click", () => imageModal.close());
+    imageModalClose.addEventListener("click", () => {
+      if (!imageModal) return;
+      if (typeof imageModal.close === "function") {
+        imageModal.close();
+      } else {
+        imageModal.removeAttribute("open");
+      }
+    });
   }
 
   /* ── Scroll Progress & Sticky Nav ─────────────────────────── */
@@ -792,7 +803,7 @@
     aiAssistantPanel.setAttribute("aria-hidden", String(!newState));
     aiLauncherBtn.setAttribute("aria-expanded", String(newState));
 
-    if (newState && aiMessagesContainer.children.length === 0) {
+    if (newState && aiMessagesContainer && aiMessagesContainer.children.length === 0) {
       appendBotWelcome();
     }
     if (newState && aiInputText) {
@@ -812,7 +823,13 @@
       if (aiAssistantPanel && aiAssistantPanel.classList.contains("ai-panel--open")) {
         toggleAIPanel(false);
       }
-      if (imageModal && imageModal.open) imageModal.close();
+      if (imageModal && imageModal.open) {
+        if (typeof imageModal.close === "function") {
+          imageModal.close();
+        } else {
+          imageModal.removeAttribute("open");
+        }
+      }
     }
   });
 
