@@ -61,6 +61,24 @@
     window.scrollTo({ top, behavior: "smooth" });
   }
 
+  /* ── Scroll Reveal ───────────────────────────────────────── */
+  // Sections start hidden in CSS so they can animate into view. Always
+  // provide a visible fallback when IntersectionObserver is unavailable.
+  const revealElements = $$(".reveal");
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("reveal--visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.08 });
+
+    revealElements.forEach(element => revealObserver.observe(element));
+  } else {
+    revealElements.forEach(element => element.classList.add("reveal--visible"));
+  }
+
   /* ══════════════════════════════════════════════════════════
      POPULATE SECTIONS
      ══════════════════════════════════════════════════════════ */
@@ -744,12 +762,12 @@
   const navToggle = document.getElementById("nav-toggle");
   if (navToggle && navMenu) {
     navToggle.addEventListener("click", () => {
-      const isOpen = navMenu.classList.toggle("open");
+      const isOpen = navMenu.classList.toggle("nav-links--open");
       navToggle.setAttribute("aria-expanded", String(isOpen));
     });
     navMenu.addEventListener("click", e => {
       if (e.target.tagName === "A") {
-        navMenu.classList.remove("open");
+        navMenu.classList.remove("nav-links--open");
         navToggle.setAttribute("aria-expanded", "false");
       }
     });
