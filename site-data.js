@@ -27,7 +27,7 @@ const SITE_DATA = {
     { value: "100%", label: "Hands-on Student-Led Learning" },
     { value: "All Branches", label: "Open to Curious Beginners" },
   ],
-  heroPill: "Student Robotics Club • MBM University • 2024–2025",
+  heroPill: "Student Robotics Club • MBM University •",
   heroQuote: "\"Turn ideas into working machines through hands-on learning, teamwork, and experimentation.\"",
   heroQuoteAttribution: "— ESRC Club Philosophy, MBM University",
 
@@ -378,7 +378,7 @@ const SITE_DATA = {
     sectionTag: "06 / Faculty Advisor",
     tag: "ESRC Mentor & Patron",
     kicker: "Guiding Innovation & Technical Excellence",
-    name: "Dr. Alok Khatri",
+    name: "Dr. Alok Kumar Gehlot",
     description: "The foundational academic pillar and guide of ESRC at MBM University. Providing mentorship on technical innovation, laboratory resource procurement, project incubation, and connecting student engineers with premier national competitions and industry opportunities.",
     badges: [
       { icon: "🎓", label: "Faculty Advisor" },
