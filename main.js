@@ -597,32 +597,37 @@
     });
   }
 
-  // Form Submissions with Honest Feedback
+  // Form Submissions: open the visitor's email app with a prefilled message.
+  function openEmailDraft(subject, body) {
+    const mailtoUrl = `mailto:${D.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  }
+
   if (contactForm) {
     contactForm.addEventListener("submit", e => {
       e.preventDefault();
       const name = document.getElementById("contactName").value.trim();
       const email = document.getElementById("contactEmail").value.trim();
       const msg = document.getElementById("contactMessage").value.trim();
+      const domain = document.getElementById("contactDomain").value;
+      const inquiry = document.querySelector(".inquiry-chip.active")?.dataset.chip || "General Question";
       const successDiv = document.getElementById("formSuccessMsg");
 
-      if (!name || !email || !msg) {
-        alert("Please complete all required fields.");
+      if (!contactForm.reportValidity()) {
         return;
       }
 
+      openEmailDraft(
+        `ESRC Website Inquiry — ${inquiry}`,
+        `Name: ${name}\nEmail: ${email}\nInquiry: ${inquiry}\nArea of interest: ${domain}\n\nMessage:\n${msg}`
+      );
+
       if (successDiv) {
-        successDiv.style.display = "block";
+        successDiv.className = "form-success-msg form-success-msg--show";
         successDiv.innerHTML = `
-          <strong>✓ Thank you, ${esc(name)}!</strong><br>
-          Your message has been captured in this browser session.<br>
-          <small style="opacity:0.85;display:block;margin-top:4px;">
-            (Notice: This is currently in client-side preview mode. To route submissions to your club inbox or Google Sheets, please configure a webhook endpoint in site-data.js).
-          </small>
+          <strong>Email draft ready for ${esc(name)}.</strong><br>
+          Your email app opened with the message addressed to ${esc(D.contact.email)}. Press Send there to deliver it.
         `;
-        contactForm.reset();
-        if (contactCharCounter) contactCharCounter.textContent = "0 / 500";
-        setTimeout(() => { successDiv.style.display = "none"; }, 9000);
       }
     });
   }
@@ -634,25 +639,26 @@
       const name = document.getElementById("regName").value.trim();
       const email = document.getElementById("regEmail").value.trim();
       const dept = document.getElementById("regDepartment").value.trim();
+      const year = document.getElementById("regYear").value;
+      const track = document.getElementById("regTrackSelect").value;
+      const question = document.getElementById("regQuestion").value.trim();
       const successDiv = document.getElementById("registerSuccessMsg");
 
-      if (!name || !email || !dept) {
-        alert("Please fill in your name, university email, and branch.");
+      if (!registerForm.reportValidity()) {
         return;
       }
 
+      openEmailDraft(
+        `ESRC Membership Registration — ${name}`,
+        `Full name: ${name}\nEmail: ${email}\nBranch / Department: ${dept}\nAcademic year: ${year}\nPreferred domain: ${track}\n\nWhy I want to join ESRC:\n${question}`
+      );
+
       if (successDiv) {
-        successDiv.style.display = "block";
+        successDiv.className = "form-success-msg form-success-msg--show";
         successDiv.innerHTML = `
-          <strong>✓ Registration Received, ${esc(name)}!</strong><br>
-          Welcome to the ESRC community interest list.<br>
-          <small style="opacity:0.85;display:block;margin-top:4px;">
-            (Notice: This is currently in client-side preview mode. Configure your club's Google Form or backend URL in site-data.js to record responses permanently).
-          </small>
+          <strong>Registration email ready for ${esc(name)}.</strong><br>
+          Your email app opened with the registration addressed to ${esc(D.contact.email)}. Press Send there to submit it.
         `;
-        registerForm.reset();
-        if (regCharCounter) regCharCounter.textContent = "0 / 600";
-        setTimeout(() => { successDiv.style.display = "none"; }, 9000);
       }
     });
   }

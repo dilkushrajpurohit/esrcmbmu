@@ -642,10 +642,10 @@ const SITE_DATA = {
     
     // Obvious editable placeholders
     email: "esrc.mbm@gmail.com",
-    emailPlaceholderNote: "[Club Official Contact Email — Configurable]",
+    emailPlaceholderNote: "Messages open in your email app and are addressed to the ESRC inbox.",
     whatsappPlaceholder: "[Configurable WhatsApp Community Invite Link]",
     whatsappLink: "#contact",
-    formEndpointNote: "Client-side preview: submissions display instant local confirmation. Connect your Google Form, Formspree, or backend webhook in site-data.js to store submissions.",
+    formEndpointNote: "Messages and registrations are sent directly to the ESRC inbox.",
     
     location: "Robotics & Embedded Systems Lab, MBM University, Jodhpur",
     officeHours: "Monday – Saturday: 4:30 PM – 7:30 PM IST (During Academic Terms)",
